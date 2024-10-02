@@ -1,8 +1,10 @@
-import type { Editor } from "@tiptap/react"
+import { Editor } from "@tiptap/react"
 import { useState } from "react"
+import { AiOutlineOrderedList } from "react-icons/ai"
 import { LiaStrikethroughSolid } from "react-icons/lia"
-import { RxTextAlignCenter, RxTextAlignJustify, RxTextAlignLeft, RxTextAlignRight } from "react-icons/rx"
+import { RxListBullet, RxTextAlignCenter, RxTextAlignJustify, RxTextAlignLeft, RxTextAlignRight } from "react-icons/rx"
 import { TbBold, TbItalic } from "react-icons/tb"
+import Heading from "./heading"
 
 export interface ToolbarProps{
   editor: Editor | null
@@ -57,6 +59,42 @@ export default function Toolbar(props: ToolbarProps) {
 
       <button className={`hover:border rounded-md p-1 ${props.editor?.isActive({textAlign: 'justify'}) ? "bg-black text-white" : ""}`} onClick={() => props.editor?.chain().focus().setTextAlign('justify').run()}>
         <RxTextAlignJustify />
+      </button>
+      
+      <select className="" onChange={event => {
+        switch(parseInt(event.target.value)) {
+          case 1:
+            props.editor?.chain().focus().toggleHeading({level: 1}).run();
+            break;
+          case 2:
+            props.editor?.chain().focus().toggleHeading({level: 2}).run();
+            break;
+          case 3:
+            props.editor?.chain().focus().toggleHeading({level: 3}).run();
+            break;
+          case 4:
+            props.editor?.chain().focus().toggleHeading({level: 4}).run();
+            break;
+          case 5:
+            props.editor?.chain().focus().toggleHeading({level: 5}).run();
+            break;
+          case 6:
+            props.editor?.chain().focus().toggleHeading({level: 6}).run();
+            break;
+          default:
+            console.log("option don't exists.");
+            break;
+        }
+      }}>
+        <Heading />
+      </select>
+
+      <button className={`hover:border rounded-md p-1 ${props.editor?.isActive('bulletList') ? "bg-black text-white" : ""}`} onClick={() => props.editor?.chain().focus().toggleBulletList().run()}>
+        <RxListBullet />
+      </button>
+
+      <button className={`hover:border rounded-md p-1 ${props.editor?.isActive('orderedList') ? "bg-black text-white" : ""}`} onClick={() => props.editor?.chain().focus().toggleOrderedList().run()}>
+        <AiOutlineOrderedList />
       </button>
     </div>
   )
