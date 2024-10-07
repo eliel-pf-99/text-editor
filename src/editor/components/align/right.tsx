@@ -7,7 +7,7 @@ export interface AlignRightProps {
 
 export default function AlignRight(props: AlignRightProps) {
   return (
-    <button className={`hover:border rounded-md p-1 ${props.editor?.isActive({textAlign: 'right'}) ? "bg-black text-white" : ""}`} onClick={() => props.editor?.chain().focus().setTextAlign('right').run()}>
+    <button title='align in the right' className={`hover:border rounded-md p-1 ${props.editor?.isActive({textAlign: 'right'}) ? "bg-sky-700 text-white" : ""}`} onClick={() => props.editor?.chain().focus().setTextAlign('right').run()}>
         <RxTextAlignRight />
     </button>
   )

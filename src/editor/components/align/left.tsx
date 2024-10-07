@@ -7,7 +7,7 @@ export interface AlignLeftProps {
 
 export default function AlignLeft(props: AlignLeftProps) {
   return (
-    <button className={`hover:border rounded-md p-1 ${props.editor?.isActive({textAlign: 'left'}) ? "bg-black text-white" : ""}`} onClick={() => props.editor?.chain().focus().setTextAlign('left').run()}>
+    <button title='align in the left' className={`hover:border rounded-md p-1 ${props.editor?.isActive({textAlign: 'left'}) ? "bg-sky-700 text-white" : ""}`} onClick={() => props.editor?.chain().focus().setTextAlign('left').run()}>
         <RxTextAlignLeft />
     </button>
   )

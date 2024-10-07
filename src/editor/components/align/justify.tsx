@@ -7,7 +7,7 @@ export interface AlignJustifyProps {
 
 export default function AlignJustify(props: AlignJustifyProps) {
   return (
-    <button className={`hover:border rounded-md p-1 ${props.editor?.isActive({textAlign: 'justify'}) ? "bg-black text-white" : ""}`} onClick={() => props.editor?.chain().focus().setTextAlign('justify').run()}>
+    <button title="justify text" className={`hover:border rounded-md p-1 ${props.editor?.isActive({textAlign: 'justify'}) ? "bg-sky-700 text-white" : ""}`} onClick={() => props.editor?.chain().focus().setTextAlign('justify').run()}>
         <RxTextAlignJustify />
     </button>
   )

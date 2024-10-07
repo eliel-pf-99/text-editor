@@ -5,6 +5,8 @@ export default {
     extend: {
       fontFamily: {
         inter: ["Inter", "sans-serif"],
+        Qwitcher: ["Qwitcher Grypen", "cursive"],
+        roboto: ["Roboto", "sans-serif"]
       },
       typography: {
         DEFAULT: {
@@ -12,6 +14,9 @@ export default {
             maxWidth: '125ch', // add required value here
           }
         }
+      },
+      backgroundColor: {
+        salmon: '#FF7E70' 
       }
     },
   },

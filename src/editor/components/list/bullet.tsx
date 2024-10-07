@@ -1,5 +1,5 @@
 import type { Editor } from "@tiptap/react";
-import { RxListBullet } from "react-icons/rx";
+import { MdOutlineFormatListBulleted } from "react-icons/md";
 
 export interface ListBulletProps {
   editor: Editor | null
@@ -7,8 +7,8 @@ export interface ListBulletProps {
 
 export default function ListBullet(props: ListBulletProps) {
   return (
-    <button className={`hover:border rounded-md p-1 ${props.editor?.isActive('bulletList') ? "bg-black text-white" : ""}`} onClick={() => props.editor?.chain().focus().toggleBulletList().run()}>
-      <RxListBullet />
+    <button title="bullets list" className={`hover:border rounded-md p-1 ${props.editor?.isActive('bulletList') ? "bg-sky-700 text-white" : ""}`} onClick={() => props.editor?.chain().focus().toggleBulletList().run()}>
+      <MdOutlineFormatListBulleted />
     </button>
   )
 }

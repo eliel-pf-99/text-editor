@@ -13,7 +13,14 @@ import TextStyle from '@tiptap/extension-text-style'
 import Highlight from '@tiptap/extension-highlight'
 import Image from '@tiptap/extension-image'
 import Link from '@tiptap/extension-link'
+import { useState } from 'react'
+import Menu from './components/menu/menu'
+import Back from './components/back/back'
 
+export type theme = {
+  name: string
+  class: string
+}
 export default function EditorApp() {
   const editor = useEditor({
     extensions: [StarterKit, Color, Text, TextStyle, BulletList, ListItem, OrderedList, 
@@ -45,13 +52,26 @@ export default function EditorApp() {
       }
     }
   })
-  
 
   
+  const themesOptions: theme[] = [
+    {name: 'dark', class: 'bg-black prose-invert text-white'},
+    {name: 'light', class: 'bg-white'},
+    {name: 'calm', class: 'bg-[#ebf3e7]'}
+  ]
+  
+  const [theme, setTheme] = useState(themesOptions[1].class)
+  
+  const handleTheme = (themeName: string) => {
+    setTheme(themesOptions.filter(theme => theme.name == themeName)[0].class)
+  }
+
   return <>
   <div className='relative'>
-    <Toolbar editor={editor}   />
-    <EditorContent className="px-6 py-8 text-left md:py-20 md:px-48 font-inter prose !absulute" editor={editor} />
+    <Back />
+    <Toolbar editor={editor} setTheme={handleTheme} themes={themesOptions.map(theme => theme.name)} currentTheme={theme}  />
+    <Menu />
+    <EditorContent className={"px-6 py-8 !max-w-none font-roboto text-left md:py-20 md:px-48 prose !absulute " + theme} editor={editor} />
   </div>
   </>
     

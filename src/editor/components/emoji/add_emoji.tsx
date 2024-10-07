@@ -19,10 +19,17 @@ export default function AddEmoji(props: AddEmojiProps) {
       }
   }, [props.editor, url, toggle])
 
+  const handleOnBlur = useCallback((event : React.FocusEvent<HTMLDivElement, Element>) => {
+    if(event.currentTarget.contains(event.relatedTarget)){
+      return;
+    }
+    toggle();
+  }, [toggle])
+
   return (
-    <div onBlur={toggle} className="relative flex items-center flex-col">
+    <div title="add emoji" onBlur={handleOnBlur} className="relative rounded-md hover:border p-1 flex items-center flex-col">
       <button onClick={toggle}>
-        <MdOutlineEmojiEmotions />
+        <MdOutlineEmojiEmotions className="w-5 h-5" />
       </button>
       <div  className={show + " my-5 bg-transparent absolute gap-2 justify-center items-center p-1"}>
         <EmojiPicker onEmojiClick={emoji => {

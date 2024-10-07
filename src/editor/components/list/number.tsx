@@ -1,5 +1,5 @@
 import type { Editor } from "@tiptap/react";
-import { AiOutlineOrderedList } from "react-icons/ai";
+import { MdOutlineFormatListNumbered } from "react-icons/md";
 
 export interface ListNumberProps {
   editor: Editor | null
@@ -7,8 +7,8 @@ export interface ListNumberProps {
 
 export default function ListNumber(props: ListNumberProps) {
   return (
-    <button className={`hover:border rounded-md p-1 ${props.editor?.isActive('orderedList') ? "bg-black text-white" : ""}`} onClick={() => props.editor?.chain().focus().toggleOrderedList().run()}>
-      <AiOutlineOrderedList />
+    <button title="number list" className={`hover:border rounded-md p-1 ${props.editor?.isActive('orderedList') ? "bg-sky-700 text-white" : ""}`} onClick={() => props.editor?.chain().focus().toggleOrderedList().run()}>
+      <MdOutlineFormatListNumbered />
     </button>
   )
 }
