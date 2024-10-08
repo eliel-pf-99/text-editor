@@ -1,7 +1,7 @@
 import {useEditor, EditorContent} from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
-import { initialContent } from './intialContent'
-import Toolbar from './components/toolbar'
+import { initialContent } from '../intialContent'
+import Toolbar from '../components/toolbar'
 import Color from '@tiptap/extension-color'
 import Text from '@tiptap/extension-text'
 import TextAlign from '@tiptap/extension-text-align'
@@ -14,8 +14,8 @@ import Highlight from '@tiptap/extension-highlight'
 import Image from '@tiptap/extension-image'
 import Link from '@tiptap/extension-link'
 import { useState } from 'react'
-import Menu from './components/menu/menu'
-import Back from './components/back/back'
+import Menu from '../components/menu/menu'
+import Back from '../components/back/back'
 
 export type theme = {
   name: string

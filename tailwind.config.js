@@ -3,6 +3,14 @@ export default {
   content: ["./src/**/*.tsx"],
   theme: {
     extend: {
+      keyframes: {
+        inside: {
+          '100%': {transform: 'translateY(224px)'}
+        }
+      },
+      animation: {
+        'inside-anim': 'inside 1s'
+      },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
         Qwitcher: ["Qwitcher Grypen", "cursive"],

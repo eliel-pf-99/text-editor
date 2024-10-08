@@ -1,11 +1,11 @@
 import './App.css'
-import EditorApp from './editor/editor_app'
+import Home from './editor/pages/home'
 
 function App() {
 
   return <div className='w-full'>
-      <EditorApp />
-      </div>
+        <Home />
+  </div>
 }
 
 export default App
