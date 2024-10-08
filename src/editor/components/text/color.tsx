@@ -9,7 +9,7 @@ export default function TextColor(props: TextColorProps) {
   const [text_color, setTextColor] = useState("bg-blue-500")
 
   return (
-    <div title="set text color" className="hover:border hover:rounded-full px-1 cursor-pointer flex items-center gap-3">
+    <div title="set text color" className="hover:border transition-all hover:rounded-full px-1 cursor-pointer flex items-center gap-3">
         <input 
           type="color"
           onChange={event => {

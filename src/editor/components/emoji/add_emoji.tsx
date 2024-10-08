@@ -27,7 +27,7 @@ export default function AddEmoji(props: AddEmojiProps) {
   }, [toggle])
 
   return (
-    <div title="add emoji" onBlur={handleOnBlur} className="relative rounded-md hover:border p-1 flex items-center flex-col">
+    <div title="add emoji" onBlur={handleOnBlur} className="relative transition-all rounded-md hover:border p-1 flex items-center flex-col">
       <button onClick={toggle}>
         <MdOutlineEmojiEmotions className="w-5 h-5" />
       </button>

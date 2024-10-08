@@ -11,7 +11,7 @@ export default function Highlight(props: HighlightProps) {
   const [highlight_color, setHighlightColor] = useState("bg-blue-500")
 
   return (
-    <div title="mark text" className="hover:border hover:rounded-full p-1 cursor-pointer flex items-center gap-3">
+    <div title="mark text" className="hover:border transition-all hover:rounded-full p-1 cursor-pointer flex items-center gap-3">
         <input 
           type="color"
           onChange={event => {

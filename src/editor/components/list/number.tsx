@@ -7,7 +7,7 @@ export interface ListNumberProps {
 
 export default function ListNumber(props: ListNumberProps) {
   return (
-    <button title="number list" className={`hover:border rounded-md p-1 ${props.editor?.isActive('orderedList') ? "bg-sky-700 text-white" : ""}`} onClick={() => props.editor?.chain().focus().toggleOrderedList().run()}>
+    <button title="number list" className={`hover:border transition-all rounded-md p-1 ${props.editor?.isActive('orderedList') ? "bg-sky-700 text-white" : ""}`} onClick={() => props.editor?.chain().focus().toggleOrderedList().run()}>
       <MdOutlineFormatListNumbered />
     </button>
   )

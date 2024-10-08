@@ -25,7 +25,7 @@ export default function AddLink(props: AddLinkProps) {
   }, [toggle])
 
   return (
-    <div title="hyperlink" onBlur={handleOnBlur} className="relative flex items-center rounded-md hover:border p-1 flex-col">
+    <div title="hyperlink" onBlur={handleOnBlur} className="relative transition-all flex items-center rounded-md hover:border p-1 flex-col">
       <button onClick={toggle}>
         <LuLink />
       </button>

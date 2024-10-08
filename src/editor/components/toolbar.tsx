@@ -25,7 +25,7 @@ export interface ToolbarProps{
 
 export default function Toolbar(props: ToolbarProps) {
   return (
-    <div className={"bg-opacity-100 flex flex-row items-center fixed top-4 left-1/2 transform -translate-x-1/2 bg-white" +" h-10 gap-4 border rounded-full shadow-md p-2 "}>
+    <div className={"transition-all bg-opacity-100 flex flex-row items-center fixed top-4 left-1/2 transform -translate-x-1/2 bg-white" +" h-10 gap-4 border rounded-full shadow-md p-2 "}>
       <TextBold editor={props.editor}/>
       <TextItalic editor={props.editor}/>
       <TextStrike editor={props.editor}/>

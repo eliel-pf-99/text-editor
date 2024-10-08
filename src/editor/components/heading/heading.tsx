@@ -16,10 +16,16 @@ export default function Heading(props: HeadingProps) {
 
   const toggle = useCallback(() => show == 'hidden' ? setShow('flex') : setShow('hidden'), [show]);
   const headings = [...Array(4).keys()].map(i => i + 1);
+  const handleOnBlur = useCallback((event : React.FocusEvent<HTMLDivElement, Element>) => {
+    if(event.currentTarget.contains(event.relatedTarget)){
+      return;
+    }
+    toggle();
+  }, [toggle])
   const headingsButtons = headings.map(heading => {
     return <button onClick={() => run(heading)} className="hover:bg-sky-700 hover:text-white p-1 m-1 w-22 rounded-sm">Heading {heading}</button>
     })
-  return <div title="heading" className="relative flex items-center p-1 rounded-lg flex-col hover:border ">
+  return <div title="heading" onBlur={handleOnBlur} className="relative transition-all flex items-center p-1 rounded-lg flex-col hover:border ">
     <button className="font-inter flex items-center gap-2" onClick={toggle}>
       Heading 
       <div className={"w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent " + (show == 'hidden' ? " border-t-4 border-t-black" : " border-b-4 border-b-black")}></div>

@@ -25,7 +25,7 @@ export default function AddImage(props: AddImageProps) {
   }, [toggle])
 
   return (
-    <div title="add image" tabIndex={0} onBlur={handleOnBlur} className="relative rounded-md hover:border p-1 flex items-center flex-col">
+    <div title="add image" tabIndex={0} onBlur={handleOnBlur} className="relative transition-all rounded-md hover:border p-1 flex items-center flex-col">
       <button onClick={toggle}>
         <CiImageOn className="w-5 h-5" />
       </button>

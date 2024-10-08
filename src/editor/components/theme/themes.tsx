@@ -31,7 +31,7 @@ export default function themes(props: ThemesProps) {
   }, [dark, props])
 
   return (
-    <div title="set theme" tabIndex={0} onBlur={handleOnBlur} className="relative hover:border rounded-full p-1 flex items-center flex-col">
+    <div title="set theme" tabIndex={0} onBlur={handleOnBlur} className="relative transition-all hover:border rounded-full p-1 flex items-center flex-col">
       <button onClick={handleTheme}>
         {dark == 'light' ? <PiSunLight className="w-5 h-5" /> : <PiMoonStars />}
       </button>

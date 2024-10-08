@@ -7,7 +7,7 @@ export interface AlignCenterProps {
 
 export default function AlignCenter(props: AlignCenterProps) {
   return (
-    <button title='align in the center' className={`hover:border rounded-md p-1 ${props.editor?.isActive({textAlign: 'center'}) ? "bg-sky-700 text-white" : ""}`} onClick={() => props.editor?.chain().focus().setTextAlign('center').run()}>
+    <button title='align in the center' className={`hover:border transition-all rounded-md p-1 ${props.editor?.isActive({textAlign: 'center'}) ? "bg-sky-700 text-white" : ""}`} onClick={() => props.editor?.chain().focus().setTextAlign('center').run()}>
         <RxTextAlignCenter />
     </button>
   )
