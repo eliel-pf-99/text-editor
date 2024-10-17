@@ -14,7 +14,7 @@ export default function AddEmoji(props: AddEmojiProps) {
   const toggle = useCallback(() => show == 'hidden' ? setShow('flex') : setShow('hidden'), [show]);
   const addImage = useCallback(() => {
       if(url){
-        props.editor?.chain().focus().setImage({src: url}).run()
+        props.editor?.chain().focus().insertContent(url)
         toggle()
       }
   }, [props.editor, url, toggle])
@@ -33,7 +33,8 @@ export default function AddEmoji(props: AddEmojiProps) {
       </button>
       <div  className={show + " my-5 bg-transparent absolute gap-2 justify-center items-center p-1"}>
         <EmojiPicker onEmojiClick={emoji => {
-          setUrl(emoji.getImageUrl());
+          console.log(emoji.emoji)
+          setUrl(emoji.emoji);
           addImage();
           }}/>
       </div>

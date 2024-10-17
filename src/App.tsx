@@ -1,11 +1,14 @@
 import './App.css'
-import Home from './editor/pages/home'
+import AuthProvider from './provider/auth_provider'
+import { Routes } from './routes'
 
 function App() {
 
-  return <div className='w-full'>
-        <Home />
-  </div>
+  return (
+    <AuthProvider>
+      <Routes />
+    </AuthProvider>
+  )
 }
 
 export default App

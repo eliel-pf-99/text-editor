@@ -4,7 +4,6 @@ import AlignCenter from "./align/center"
 import AlignJustify from "./align/justify"
 import AlignLeft from "./align/left"
 import AlignRight from "./align/right"
-import AddEmoji from "./emoji/add_emoji"
 import AddImage from "./image/add_image"
 import AddLink from "./link/add_link"
 import ListBullet from "./list/bullet"
@@ -38,7 +37,7 @@ export default function Toolbar(props: ToolbarProps) {
       <ListBullet editor={props.editor}/>
       <ListNumber editor={props.editor}/>
       <AddImage editor={props.editor}/>
-      <AddEmoji editor={props.editor}/>
+      {/* <AddEmoji editor={props.editor}/> */}
       <Highlight editor={props.editor}/>
       <AddLink editor={props.editor}/>
       <Themes themes={props.themes} onAction={props.setTheme} />
