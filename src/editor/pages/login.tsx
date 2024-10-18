@@ -31,9 +31,9 @@ export default function Login() {
   };
 
   return (
-    <div className="w-screen h-screen flex justify-center flex-col items-center font-inter gap-5">
+    <div className="flex justify-center py-5 flex-col items-center font-inter gap-5">
       <h1 className="text-5xl mb-5 text-sky-700 font-bold">Welcome to your Text Editor</h1>
-      <form className="bg-white text-center py-4 w-1/4 h-4/6 rounded-md shadow-2xl border">
+      <form className="bg-white text-center py-4 w-1/4  rounded-md shadow-2xl border">
           <h2 className="text-3xl mb-5 font-inter text-sky-700 font-bold">Login</h2>
           <div className="flex flex-col text-left gap-2 p-4 mb-5">
             <label className="text-md">E-mail</label>
@@ -43,7 +43,7 @@ export default function Login() {
           <div className="flex flex-col text-left gap-2 p-4 mb-5">
             <label className="text-md">Password</label>
             <input type="password" onChange={(e) => setPassword(e.target.value)} className="outline-none border border-sky-700 shadow-sm p-2"/>
-            <a href="#signup" className="text-sm  text-sky-700">Create an account</a>
+            <a onClick={() => navigate("/signup")} className="text-sm cursor-pointer text-sky-700">Create an account</a>
           </div>
 
           <button onClick={handleLogin} className="border transition-all py-2 px-4 shadow-sm hover:shadow-xl text-md hover:text-xl hover:bg-sky-700 hover:text-white rounded-full">Let's Go!</button>

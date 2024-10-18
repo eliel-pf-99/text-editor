@@ -7,6 +7,12 @@ interface LoginRes {
   password: string
 }
 
+interface SignUpRes {
+  name: string
+  email: string
+  password: string
+}
+
 interface LoginBack {
   isAuth: boolean
   token: string | null
@@ -44,6 +50,10 @@ export async function login(req: LoginRes): Promise<LoginBack>{
   return response
 }
 
+export async function signup(req: SignUpRes){
+  return await axios.post("/signup", JSON.stringify(req)).then(res => res.statusText == "OK")
+}
+
 export async function loadNotes(): Promise<Note[] | null>{
   return await axios.get("/get-notes").then(res => {
     const notes: Note[] = []
@@ -74,9 +84,14 @@ export async function saveNote(note: NewNote){
   })
 }
 
-
 export async function updateNote(note: Note){
   return await axios.post("/update-note", JSON.stringify(note)).then(res => {
+    return res.data.message
+  })
+}
+
+export async function deleteNote(id: string){
+  return await axios.post("/delete-note", JSON.stringify({"note_id": id})).then(res => {
     return res.data.message
   })
 }

@@ -2,8 +2,9 @@ import type { Editor } from "@tiptap/react";
 import { useCallback } from "react";
 import { CiSaveDown2, CiSaveUp2 } from "react-icons/ci";
 import { useAuth } from "../../../provider/auth_provider";
-import { parseDataToNote, saveNote, updateNote } from "../../../api/api";
+import { parseDataToNote, saveNote, updateNote, deleteNote } from "../../../api/api";
 import { useNavigate } from "react-router-dom";
+import { AiOutlineDelete } from "react-icons/ai";
 
 export interface MenuProps {
   editor: Editor | null
@@ -30,6 +31,13 @@ export default function Menu(props: MenuProps) {
     }
   }, [navigate, props.editor, props.id, user])
 
+  const handleDelete = useCallback(async () => {
+    const msg: string = await deleteNote(props.id ?? '')
+    if(msg.includes('success')){
+      navigate("/")
+    }
+  }, [navigate, props.id])
+
   return (
     <div className={"bg-opacity-100 bg-white transition-all flex flex-row items-center fixed top-4 right-4 h-10 gap-2 border rounded-full shadow-md p-2 "}>
       <div className="hover:border rounded-full cursor-pointer p-1">
@@ -37,6 +45,9 @@ export default function Menu(props: MenuProps) {
       </div>
       <div className="hover:border rounded-full cursor-pointer p-1">
         <CiSaveDown2 className="w-5 h-5" title="download" onClick={props.savePDF}  />
+      </div>
+      <div className="hover:border rounded-full cursor-pointer p-1">
+        <AiOutlineDelete className="w-5 h-5" title="delete" onClick={handleDelete} />
       </div>
     </div>
   )

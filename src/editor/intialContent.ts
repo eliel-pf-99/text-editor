@@ -13,16 +13,5 @@ export const initialContent = `<h1>Welcome to Your Text Editor</h1>
       <h2>Getting Started</h2>
       <p>To start using the editor, simply begin typing in the text area. You can format your text using the toolbar options available at the top.</p>
 
-      <h2>Quotes</h2>
-          <blockquote>
-              "The only limit to our realization of tomorrow is our doubts of today."
-              <br/>- Franklin D. Roosevelt
-          </blockquote>
-      
-          <blockquote>
-              "In the end, we will remember not the words of our enemies, but the silence of our friends."
-              <br/>- Martin Luther King Jr.
-          </blockquote>
-
-          <h2>Conclusion</h2>
-          <p>We hope you enjoy using this text editor. Happy writing!</p>`;
+      <h2>Conclusion</h2>
+      <p>We hope you enjoy using this text editor. Happy writing!</p>`;

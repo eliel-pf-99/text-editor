@@ -15,8 +15,15 @@ function AuthProvider({children} : {children: React.ReactNode}) {
 const [token, setToken_] = useState(localStorage.getItem("token"))
 const [user, setUser_] = useState(localStorage.getItem("user"))
 
-const setToken = (newToken: string | null) => setToken_(newToken)
-const setUser = (newUser: string | null) => setUser_(newUser)
+
+const setToken = (newToken: string | null) => {
+  localStorage.setItem("token", newToken!)
+  setToken_(newToken)
+}
+const setUser = (newUser: string | null) => {
+  localStorage.setItem("user", newUser!)
+  setUser_(newUser)
+}
 
 useEffect(() => {
   if(token) {

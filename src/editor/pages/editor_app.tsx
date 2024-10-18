@@ -54,7 +54,7 @@ export default function EditorApp() {
     content: content ?? initialContent,
     editorProps: {
       attributes: {
-        class: 'outline-none !static !max-h-screen'
+        class: 'outline-none !static !min-h-screen'
       }
     }
   })
@@ -95,11 +95,11 @@ export default function EditorApp() {
   }
 
   return <>
-  <div className='relative min-h-screen'>
+  <div className='relative'>
     <Back />
     <Toolbar editor={editor} setTheme={handleTheme} themes={themesOptions.map(theme => theme.name)} currentTheme={theme}  />
     <Menu editor={editor} id={id} savePDF={handleDownload} />
-    <EditorContent ref={contentRef} className={"px-6 py-8 !max-w-none min-h-screen font-roboto text-left md:py-20 md:px-48 prose !absulute " + theme} editor={editor} />
+    <EditorContent ref={contentRef} className={"px-6 py-8 !max-w-none !max-h-none font-roboto text-left md:py-20 md:px-48 prose !absulute " + theme} editor={editor} />
   </div>
   </>
     

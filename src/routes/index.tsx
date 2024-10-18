@@ -5,20 +5,19 @@ import { ProtectedRoute } from "./protect";
 import Login from "../editor/pages/login";
 import Signup from "../editor/pages/signup";
 import Home from "../editor/pages/home";
+import Index from "../editor/pages";
+import Mobile from "../editor/pages/mobile";
+import NotFound from "../editor/pages/404";
 
 export const Routes = () => {
   const {token} = useAuth();
 
-  const routesForPublic = [
+  const routeForMobile = [
     {
-      path: '/service',
-      element: <div>Service Page</div>
-    },
-    {
-      path: '/about-us',
-      element: <div>About Us</div>
+      path: "/",
+      element: <Mobile />
     }
-  ];
+  ]
 
   const routesForAuthenticatedOnly = [
     {
@@ -33,10 +32,6 @@ export const Routes = () => {
         path: "/editor",
       element: <EditorApp />
       },
-      {
-        path: "/logout",
-        element: <div>Logout</div>
-      }
     ]
   }
   ]
@@ -44,7 +39,7 @@ export const Routes = () => {
   const routesForNotAuthenticate = [
     {
       path: "/",
-      element: <div>Home Page</div>
+      element: <Index />
     },
     {
       path: "/login",
@@ -56,11 +51,22 @@ export const Routes = () => {
     },
   ]
 
-  const router = createBrowserRouter([
-    ...routesForPublic,
-    ...(!token ? routesForNotAuthenticate : []),
-    ...routesForAuthenticatedOnly,
+  const routeNotFound = [{
+    path: '*',
+    element: <NotFound />
+  }]
+  //check if is a mobile
+  let router = createBrowserRouter([
+    ...routeForMobile,
+    ...routeNotFound,
   ]);
-
+  if(!/Mobi|Android|iPhone/i.test(navigator.userAgent)){
+    router = createBrowserRouter([
+      ...(!token ? routesForNotAuthenticate : []),
+      ...routesForAuthenticatedOnly,
+      ...routeNotFound,
+    ]);
+  }
+  
   return <RouterProvider router={router} />
 }
