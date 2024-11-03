@@ -1,50 +1,17 @@
-# React + TypeScript + Vite
+# Text Editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+É um simples aplicativo, fruto de um caso de estudo.
 
-Currently, two official plugins are available:
+O objetivo desse app é melhorar e aperfiçoar minhas habilidades em React e Front-End.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Com ele consegui compreender melhor o uso de API Context do React no passar informações por todo o app. Além de utilizar para criar um simples sistema de login e logout.
 
-## Expanding the ESLint configuration
+O app ainda está em desenvolvimento. Afinal não há nada que não possa ser melhorado.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Juntamente com essa parte que é o Front-End, desenvolvi em Golang uma simples API para tornar-lo funcional.
 
-- Configure the top-level `parserOptions` property like this:
+Para conferir esse repositório [clique aqui.](https://https://github.com/eliel-pf-99/text-editor-api)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Este app está no ar para você conferir, basta [clicar aqui.](https://https://text-editor-eti0.onrender.com/)
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Como disse esse app está em desenvolvimento, espero que goste.
