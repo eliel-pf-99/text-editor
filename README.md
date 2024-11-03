@@ -10,8 +10,8 @@ O app ainda está em desenvolvimento. Afinal não há nada que não possa ser me
 
 Juntamente com essa parte que é o Front-End, desenvolvi em Golang uma simples API para tornar-lo funcional.
 
-Para conferir esse repositório [clique aqui.](https://https://github.com/eliel-pf-99/text-editor-api)
+Para conferir esse repositório [clique aqui.](https://github.com/eliel-pf-99/text-editor-api)
 
-Este app está no ar para você conferir, basta [clicar aqui.](https://https://text-editor-eti0.onrender.com/)
+Este app está no ar para você conferir, basta [clicar aqui.](https://text-editor-eti0.onrender.com/)
 
 Como disse esse app está em desenvolvimento, espero que goste.
